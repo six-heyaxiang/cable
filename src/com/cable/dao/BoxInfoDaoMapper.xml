@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cable.dao.BoxInfoDao">
+	<select id="selectBoxInfoById" parameterType="java.lang.Integer" resultType="com.cable.bean.BoxInfo">
+		<![CDATA[
+			SELECT 
+				  BoxID
+			      ,BoxName
+			      ,BoxTypeID
+			      ,SchematicID
+			      ,StationID
+			      ,OrbitID
+			      ,Instruction
+			      ,Layer
+			      ,RootID
+			      ,Depth
+			      ,LocalePhotoID
+  			FROM 
+  				  B_BoxInfo
+  			WHERE
+  				  BoxID = #{id}
+		]]>
+	</select>
+	<select id="selectBoxInfoList" resultType="com.cable.bean.BoxInfo">
+		<![CDATA[
+			SELECT 
+				  BoxID
+			      ,BoxName
+			      ,BoxTypeID
+			      ,SchematicID
+			      ,StationID
+			      ,OrbitID
+			      ,Instruction
+			      ,Layer
+			      ,RootID
+			      ,Depth
+			      ,LocalePhotoID
+  			FROM 
+  				  B_BoxInfo
+		]]>
+	</select>
+	<select id="selectBoxInfoCount" resultType="java.lang.Long">
+		<![CDATA[
+			SELECT
+				count(1)
+			FROM 
+				B_BoxInfo
+		]]>
+	</select>
+</mapper>

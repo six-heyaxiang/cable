@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>    
+	<package name="boxinfo_json" extends="app-default" namespace="/detail">
+		<action name="boxinfo" class="com.cable.web.BoxInfoAction" method="getBoxInfoById">
+			<result name="boxinfo" type="json">
+				<param name="root">boxInfoBean</param>
+		        <param name="contentType">text/html</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="excludeNullProperties">true</param>
+				<param name="includeProperties">
+					boxinfo.*
+				</param>
+			</result>
+		</action>
+		<action name="boxinfolist" class="com.cable.web.BoxInfoAction" method="getBoxInfoList">
+			<result name="boxinfolist" type="json">
+				<param name="root">boxinfoListBean</param>
+		        <param name="contentType">text/html</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="excludeNullProperties">true</param>
+				<param name="includeProperties">
+					boxinfoList\[\d+\]\.\w+*
+				</param>
+			</result>
+		</action>
+	</package>
+</struts>
