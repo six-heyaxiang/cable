@@ -27,5 +27,16 @@
 				</param>
 			</result>
 		</action>
+		<action name="boxtype" class="com.cable.web.BoxInfoAction" method="getBoxTypeById">
+			<result name="boxtype" type="json">
+				<param name="root">boxTypeBean</param>
+		        <param name="contentType">text/html</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="excludeNullProperties">true</param>
+				<param name="includeProperties">
+					boxType.*
+				</param>
+			</result>
+		</action>
 	</package>
 </struts>

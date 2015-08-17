@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cable.dao.BoxTypeDao">
+	<select id="selectBoxTypeById" parameterType="java.lang.Integer" resultType="com.cable.bean.BoxType">
+		<![CDATA[
+			SELECT 
+				BoxTypeId,
+				BoxModel,
+				BoxPostNumber,
+				BoxTypeName
+			FROM
+				B_BoxType
+			WHERE
+				BoxTypeId = #{id}
+		]]>
+	</select>
+	<select id="selectBoxTypes" resultType="com.cable.bean.BoxType">
+		<![CDATA[
+			SELECT 
+				BoxTypeId,
+				BoxModel,
+				BoxPostNumber,
+				BoxTypeName
+			FROM
+				B_BoxType
+		]]>
+	</select>
+	<select id="selectBoxTypesCount" resultType="java.lang.Integer">
+		<![CDATA[
+			SELECT 
+				count(1)
+			FROM
+				B_BoxType
+		]]>
+	</select>
+</mapper>

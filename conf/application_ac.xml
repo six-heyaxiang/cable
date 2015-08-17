@@ -20,4 +20,12 @@
 	<bean id="boxInfoService" class="com.cable.service.BoxInfoServiceImpl">
 		<property name="boxInfoDao" ref="boxInfoDao"></property>
 	</bean>
+	<!-- boxType -->
+	<bean id="boxTypeDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.cable.dao.BoxTypeDao" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+	<bean id="boxTypeService" class="com.cable.service.BoxTypeServiceImpl">
+		<property name="boxTypeDao" ref="boxTypeDao"></property>
+	</bean>
 </beans>

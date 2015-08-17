@@ -8,5 +8,6 @@
     </properties>
 	<mappers>
 		<mapper resource="com/cable/dao/BoxInfoDaoMapper.xml"/>
+		<mapper resource="com/cable/dao/BoxTypeDaoMapper.xml"/>
 	</mappers>
 </configuration>
