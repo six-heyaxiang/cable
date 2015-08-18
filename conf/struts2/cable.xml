@@ -38,5 +38,16 @@
 				</param>
 			</result>
 		</action>
+		<action name="cableInfo" class="com.cable.web.CableInfoAction" method="getCableInfoById">
+			<result name="cableInfo" type="json">
+				<param name="root">cableInfoBean</param>
+		        <param name="contentType">text/html</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="excludeNullProperties">true</param>
+				<param name="includeProperties">
+					cableInfo.*
+				</param>
+			</result>
+		</action>
 	</package>
 </struts>

@@ -28,4 +28,12 @@
 	<bean id="boxTypeService" class="com.cable.service.BoxTypeServiceImpl">
 		<property name="boxTypeDao" ref="boxTypeDao"></property>
 	</bean>
+	<!-- cableInfo -->
+	<bean id="cableInfoDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.cable.dao.CableInfoDao" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+	<bean id="cableInfoService" class="com.cable.service.CableInfoServiceImpl">
+		<property name="cableInfoDao" ref="cableInfoDao"></property>
+	</bean>
 </beans>

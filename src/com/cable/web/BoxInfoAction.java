@@ -4,12 +4,14 @@ import java.util.List;
 
 import com.cable.bean.BoxInfo;
 import com.cable.bean.BoxType;
+import com.cable.bean.CableInfo;
 import com.cable.bean.result.ResultBoxInfo;
 import com.cable.bean.result.ResultBoxInfoList;
 import com.cable.bean.result.ResultBoxType;
 import com.cable.common.DynamicPagination;
 import com.cable.service.BoxInfoService;
 import com.cable.service.BoxTypeService;
+import com.cable.service.CableInfoService;
 
 /**
  * @author Nosix
@@ -20,6 +22,7 @@ public class BoxInfoAction extends BaseAction {
 	private static final long serialVersionUID = -8207634393495650536L;
 	private BoxInfoService boxInfoService;
 	private BoxTypeService boxTypeService;
+	private CableInfoService cableInfoService;
 
 	//请求参数
 	private Boolean isReset = true;
@@ -39,6 +42,7 @@ public class BoxInfoAction extends BaseAction {
 		if(boxinfoId == null)
 			boxinfoId = 1;
 		BoxInfo boxInfo = boxInfoService.selectBoxInfoById(boxinfoId);
+		CableInfo cableInfo = cableInfoService.getCableInfoById(boxinfoId);
 		boxInfoBean = new ResultBoxInfo();
 		boxInfoBean.setBoxinfo(boxInfo);
 		return "boxinfo";
@@ -137,6 +141,12 @@ public class BoxInfoAction extends BaseAction {
 	}
 	public void setBoxTypeBean(ResultBoxType boxTypeBean) {
 		this.boxTypeBean = boxTypeBean;
+	}
+	public CableInfoService getCableInfoService() {
+		return cableInfoService;
+	}
+	public void setCableInfoService(CableInfoService cableInfoService) {
+		this.cableInfoService = cableInfoService;
 	}
 	
 }

@@ -7,7 +7,6 @@ public class BoxInfo implements Serializable {
 	private static final long serialVersionUID = -2358760439585904680L;
 	private Integer boxId;
 	private String	boxName;
-	private Integer	boxTypeId;
 	private Integer schematicId;
 	private Integer	stationId;
 	private Integer	oribitId;
@@ -16,6 +15,7 @@ public class BoxInfo implements Serializable {
 	private Integer	rootId;
 	private Integer	depth;
 	private Integer	localePhotoId;
+	private BoxType boxType;
 	public Integer getBoxId() {
 		return boxId;
 	}
@@ -27,12 +27,6 @@ public class BoxInfo implements Serializable {
 	}
 	public void setBoxName(String boxName) {
 		this.boxName = boxName;
-	}
-	public Integer getBoxTypeId() {
-		return boxTypeId;
-	}
-	public void setBoxTypeId(Integer boxTypeId) {
-		this.boxTypeId = boxTypeId;
 	}
 	public Integer getSchematicId() {
 		return schematicId;
@@ -82,6 +76,11 @@ public class BoxInfo implements Serializable {
 	public void setLocalePhotoId(Integer localePhotoId) {
 		this.localePhotoId = localePhotoId;
 	}
-	
+	public BoxType getBoxType() {
+		return boxType;
+	}
+	public void setBoxType(BoxType boxType) {
+		this.boxType = boxType;
+	}
 	
 }

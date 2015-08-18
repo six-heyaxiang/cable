@@ -15,5 +15,11 @@
 		<!-- boxInfo -->
 		<bean name="boxInfoAcion" class="com.cable.web.BoxInfoAction">
 			<property name="boxInfoService" ref="boxInfoService"/>
+			<property name="boxTypeService" ref="boxTypeService"/>
+			<property name="cableInfoService" ref="cableInfoService"/>
+		</bean>
+		<!-- cableInfo -->
+		<bean name="cableInfoAcion" class="com.cable.web.CableInfoAction">
+			<property name="cableInfoService" ref="cableInfoService"/>
 		</bean>
 </beans>

@@ -9,9 +9,9 @@ public class CableInfo implements Serializable {
 	private Integer	cableLength;
 	private Integer cableNumber;
 	private Integer cableSpareNumber;
-	private Integer froBoxId;
-	private Integer	backBoxId;
 	private String	cablePosition;
+	private BoxInfo	froBoxInfo;
+	private BoxInfo backBoxInfo;
 	public Integer getCableId() {
 		return cableId;
 	}
@@ -36,23 +36,23 @@ public class CableInfo implements Serializable {
 	public void setCableSpareNumber(Integer cableSpareNumber) {
 		this.cableSpareNumber = cableSpareNumber;
 	}
-	public Integer getFroBoxId() {
-		return froBoxId;
-	}
-	public void setFroBoxId(Integer froBoxId) {
-		this.froBoxId = froBoxId;
-	}
-	public Integer getBackBoxId() {
-		return backBoxId;
-	}
-	public void setBackBoxId(Integer backBoxId) {
-		this.backBoxId = backBoxId;
-	}
 	public String getCablePosition() {
 		return cablePosition;
 	}
 	public void setCablePosition(String cablePosition) {
 		this.cablePosition = cablePosition;
+	}
+	public BoxInfo getFroBoxInfo() {
+		return froBoxInfo;
+	}
+	public void setFroBoxInfo(BoxInfo froBoxInfo) {
+		this.froBoxInfo = froBoxInfo;
+	}
+	public BoxInfo getBackBoxInfo() {
+		return backBoxInfo;
+	}
+	public void setBackBoxInfo(BoxInfo backBoxInfo) {
+		this.backBoxInfo = backBoxInfo;
 	}
 	
 	
