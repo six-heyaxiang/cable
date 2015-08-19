@@ -7,15 +7,15 @@ public class BoxInfo implements Serializable {
 	private static final long serialVersionUID = -2358760439585904680L;
 	private Integer boxId;
 	private String	boxName;
-	private Integer schematicId;
-	private Integer	stationId;
-	private Integer	oribitId;
 	private String	instruction;
 	private Integer layer;
 	private Integer	rootId;
 	private Integer	depth;
-	private Integer	localePhotoId;
 	private BoxType boxType;
+	private Schematic schematic;
+	private Orbit	orbit;
+	private LocalePhoto localePhoto;
+	private StationInfo station;
 	public Integer getBoxId() {
 		return boxId;
 	}
@@ -27,24 +27,6 @@ public class BoxInfo implements Serializable {
 	}
 	public void setBoxName(String boxName) {
 		this.boxName = boxName;
-	}
-	public Integer getSchematicId() {
-		return schematicId;
-	}
-	public void setSchematicId(Integer schematicId) {
-		this.schematicId = schematicId;
-	}
-	public Integer getStationId() {
-		return stationId;
-	}
-	public void setStationId(Integer stationId) {
-		this.stationId = stationId;
-	}
-	public Integer getOribitId() {
-		return oribitId;
-	}
-	public void setOribitId(Integer oribitId) {
-		this.oribitId = oribitId;
 	}
 	public String getInstruction() {
 		return instruction;
@@ -70,17 +52,35 @@ public class BoxInfo implements Serializable {
 	public void setDepth(Integer depth) {
 		this.depth = depth;
 	}
-	public Integer getLocalePhotoId() {
-		return localePhotoId;
-	}
-	public void setLocalePhotoId(Integer localePhotoId) {
-		this.localePhotoId = localePhotoId;
-	}
 	public BoxType getBoxType() {
 		return boxType;
 	}
 	public void setBoxType(BoxType boxType) {
 		this.boxType = boxType;
+	}
+	public Schematic getSchematic() {
+		return schematic;
+	}
+	public void setSchematic(Schematic schematic) {
+		this.schematic = schematic;
+	}
+	public Orbit getOrbit() {
+		return orbit;
+	}
+	public void setOrbit(Orbit orbit) {
+		this.orbit = orbit;
+	}
+	public LocalePhoto getLocalePhoto() {
+		return localePhoto;
+	}
+	public void setLocalePhoto(LocalePhoto localePhoto) {
+		this.localePhoto = localePhoto;
+	}
+	public StationInfo getStation() {
+		return station;
+	}
+	public void setStation(StationInfo station) {
+		this.station = station;
 	}
 	
 }

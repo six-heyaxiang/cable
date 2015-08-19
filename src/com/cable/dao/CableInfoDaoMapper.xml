@@ -25,6 +25,10 @@
 	<resultMap type="com.cable.bean.BoxInfo" id="BoxInfo">
 		<id column="BoxID" property="boxId"/>
 		<association property="boxType" column="BoxTypeId" select="selectBoxTypeById"/>
+		<association property="schematic" column="SchematicID" select="selectSchematicById"/>
+		<association property="orbit" column="orbitID" select="selectOrbitById"/>
+		<association property="localePhoto" column="LocalePhotoID" select="selectLocalePhotoById"/>
+		<association property="station" column="StationID" select="selectStationById"/>
 	</resultMap>
 	<select id="selectBoxInfoById" parameterType="java.lang.Integer" resultMap="BoxInfo">
 		<![CDATA[
@@ -44,6 +48,57 @@
   				  B_BoxInfo
   			WHERE
   				  BoxID = #{id}
+		]]>
+	</select>
+	<select id="selectStationById" resultType="com.cable.bean.StationInfo">
+		<![CDATA[
+			SELECT
+				StationID,
+				StationName,
+				StationNumber,
+				StationTpye as StationType
+			FROM
+				B_StationInfo
+			WHERE
+				StationID = #{id}
+		]]>
+	</select>
+	<select id="selectLocalePhotoById" resultType="com.cable.bean.LocalePhoto">
+		<![CDATA[
+			SELECT
+				LocalePhotoID,
+				LocalePhotoName,
+				LOcalePhoto
+			FROM
+				B_LocalePhoto
+			WHERE
+				LocalePhotoID = #{id}
+		]]>
+	</select>
+	<select id="selectOrbitById" resultType="com.cable.bean.Orbit">
+		<![CDATA[
+			SELECT
+				OrbitID,
+				StationID,
+				OrbitTypeID,
+				OrbitName,
+				LocalePhotoID
+			FROM
+				B_Orbit
+			WHERE
+				OrbitID = #{id}
+		]]>
+	</select>
+	<select id="selectSchematicById" resultType="com.cable.bean.Schematic">
+		<![CDATA[
+			SELECT
+				SchematicID,
+				SchematicName,
+				SchematicPhoto
+			FROM
+				B_Schematic
+			WHERE
+				SchematicID = #{id}
 		]]>
 	</select>
 	<select id="selectBoxTypeById" parameterType="java.lang.Integer" resultType="com.cable.bean.BoxType">
