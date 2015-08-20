@@ -68,7 +68,7 @@
 			SELECT
 				LocalePhotoID,
 				LocalePhotoName,
-				LOcalePhoto
+				LocalePhoto
 			FROM
 				B_LocalePhoto
 			WHERE
