@@ -22,4 +22,8 @@
 		<bean name="cableInfoAcion" class="com.cable.web.CableInfoAction">
 			<property name="cableInfoService" ref="cableInfoService"/>
 		</bean>
+		<!-- stationInfo -->
+		<bean name="stationInfoAcion" class="com.cable.web.StationInfoAction">
+			<property name="stationInfoService" ref="stationInfoService"/>
+		</bean>
 </beans>

@@ -36,4 +36,12 @@
 	<bean id="cableInfoService" class="com.cable.service.CableInfoServiceImpl">
 		<property name="cableInfoDao" ref="cableInfoDao"></property>
 	</bean>
+	<!-- stationInfo -->
+	<bean id="stationInfoDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.cable.dao.StationInfoDao" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+	<bean id="stationInfoService" class="com.cable.service.StationInfoServiceImpl">
+		<property name="stationInfoDao" ref="stationInfoDao"></property>
+	</bean>
 </beans>

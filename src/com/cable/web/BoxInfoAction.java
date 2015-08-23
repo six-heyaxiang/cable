@@ -42,7 +42,6 @@ public class BoxInfoAction extends BaseAction {
 		if(boxinfoId == null)
 			boxinfoId = 1;
 		BoxInfo boxInfo = boxInfoService.selectBoxInfoById(boxinfoId);
-		CableInfo cableInfo = cableInfoService.getCableInfoById(boxinfoId);
 		boxInfoBean = new ResultBoxInfo();
 		boxInfoBean.setBoxinfo(boxInfo);
 		return "boxinfo";
