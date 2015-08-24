@@ -1,0 +1,56 @@
+/* CSS Document */
+#Content{
+	width:1280px;
+	height:785px;
+	margin-left:auto;
+	margin-right:auto;
+	/*margin-top:0px;*/
+	/*background-color:#3C0;*/
+	background-image:url(../images/Image1atframe0.png);
+	background-repeat:no-repeat;
+}
+
+
+#FormContent{
+	/*background-color:#36F;*/
+	width:400px;
+	height:250px;
+	margin-left:440px;
+	/*margin-right:auto;*/
+	margin-top:300px;
+	/*padding-top:300px;*/
+	float:left;
+	/*background-image:url(images/Image3atframe0.png);
+	background-repeat:no-repeat;*/
+}
+
+#InputContent input{
+	float:left;
+	width:300px;
+	height:30px;
+	margin-left:50px;
+	margin-top:25px;
+	font-size:20px;
+	}
+#InputContent{
+	float:left;
+	width:400px;
+	height:150px;
+}
+#SubmitBtn{
+	width:400px;
+	height:44px;
+	float:left;
+	}
+	
+#button{
+	margin-left:29px;
+	width:342px;
+	height:44px;
+	}
+
+#button:hover{
+	background:url(../images/Image5atframe0.png);
+	background-repeat:no-repeat;
+}
+
