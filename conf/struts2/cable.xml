@@ -3,7 +3,15 @@
 "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
 "http://struts.apache.org/dtds/struts-2.0.dtd">
 
-<struts>    
+<struts>   
+	<package name="login" extends="app-default" namespace="/admin">
+		<action name="*" class="com.cable.web.AdminAction" method="{1}">
+			<result name="login" type="redirectAction">
+				<param name="namespace">/infos</param>
+				<param name="actionName">stationlist</param>
+			</result>
+		</action>
+	</package> 
 	<package name="boxinfo_json" extends="app-default" namespace="/infos">
 		<action name="box" class="com.cable.web.BoxInfoAction" method="getBoxInfoById">
 			<result name="boxinfo" type="json">

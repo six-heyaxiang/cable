@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
-<%@ include file="common.jsp" %>
+<%@ include file="pages/common.jsp" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -21,7 +21,7 @@ $(function(){
 <div id="Content">
   <div id="FormContent">
   	<div id = "InputContent">
-  	<form action="<%=contextPath%>/login.jhtml" method="post" id="loginform">
+  	<form action="<%=contextPath%>/admin/login.jhtml" method="post" id="loginform">
     	<input type="text" value="请输入用户名" onfocus="javascript:if(this.value=='请输入用户名')this.value='';" name="username" style="width=140"/>
         <input type="password" value="请输入密码" onfocus="javascript:if(this.value=='请输入密码')this.value='';" name="password"/>
   		<div id="SubmitBtn">
