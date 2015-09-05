@@ -24,7 +24,7 @@
 				</param>
 			</result>
 		</action>
-		<action name="boxlist" class="com.cable.web.BoxInfoAction" method="getBoxInfoList">
+		<action name="boxlist" class="com.cable.web.BoxInfoAction" method="getBoxInfoListByStationId">
 			<result name="boxinfolist" type="json">
 				<param name="root">boxinfoListBean</param>
 		        <param name="contentType">text/html</param>
@@ -58,7 +58,7 @@
 			</result>
 		</action>
 		<action name="stationlist" class="com.cable.web.StationInfoAction" method="getStationInfoList">
-			<result name="stationList" type="json">
+			<!-- <result name="stationList" type="json">
 				<param name="root">stationInfoListBean</param>
 		        <param name="contentType">text/html</param>
 				<param name="ignoreHierarchy">false</param>
@@ -66,7 +66,8 @@
 				<param name="includeProperties">
 					stationInfos\[\d+\]\.\w+*
 				</param>
-			</result>
+			</result> -->
+			<result name="stationList">/pages/main.jsp</result>
 		</action>
 	</package>
 </struts>

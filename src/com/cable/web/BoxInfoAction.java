@@ -30,6 +30,7 @@ public class BoxInfoAction extends BaseAction {
 	private Integer pageSize = 10;
 	private Integer boxinfoId;
 	private Integer	boxtypeId;
+	private Integer	stationId;
 	private DynamicPagination pagination;
 	
 	//返回结果
@@ -55,13 +56,13 @@ public class BoxInfoAction extends BaseAction {
 		return "boxtype";
 	}
 	
-	public String getBoxInfoList() {
+	public String getBoxInfoListByStationId() {
 		if(!isReset) {
 			
 		}
 		Long totalCount = boxInfoService.selectBoxInfoCount();
 		pagination = new DynamicPagination(pageNo, pageSize, totalCount);
-		List<BoxInfo> boxinfoList = boxInfoService.selectBoxInfoLIst(pagination);
+		List<BoxInfo> boxinfoList = boxInfoService.selectBoxInfoLIst(pagination, stationId);
 		boxinfoListBean = new ResultBoxInfoList();
 		boxinfoListBean.setBoxinfoList(boxinfoList);
 		return "boxinfolist";
@@ -146,6 +147,12 @@ public class BoxInfoAction extends BaseAction {
 	}
 	public void setCableInfoService(CableInfoService cableInfoService) {
 		this.cableInfoService = cableInfoService;
+	}
+	public Integer getStationId() {
+		return stationId;
+	}
+	public void setStationId(Integer stationId) {
+		this.stationId = stationId;
 	}
 	
 }

@@ -23,8 +23,9 @@ public class BoxInfoServiceImpl extends BaseService implements BoxInfoService {
 	}
 
 	@Override
-	public List<BoxInfo> selectBoxInfoLIst(DynamicPagination pagination) {
+	public List<BoxInfo> selectBoxInfoLIst(DynamicPagination pagination, Integer stationId) {
 		Map<String, Object> param = new HashMap<String, Object>();
+		param.put("stationId", stationId);
 		List<BoxInfo> boxinfoList = boxInfoDao.selectBoxInfoList(param);
 		return limit(boxinfoList, pagination.getStartIndex().intValue(), pagination.getPageSize());
 	}

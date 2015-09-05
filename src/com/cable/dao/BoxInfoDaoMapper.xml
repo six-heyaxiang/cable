@@ -37,6 +37,8 @@
 			      ,LocalePhotoID
   			FROM 
   				  B_BoxInfo
+  			WHERE
+  				  StationID = #{stationId}
 		]]>
 	</select>
 	<select id="selectBoxInfoCount" resultType="java.lang.Long">

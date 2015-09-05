@@ -20,7 +20,7 @@ public class CableInfoServiceImpl extends BaseService implements CableInfoServic
 		if(temp != null) {
 			BoxInfo backBoxInfo = temp.getBackBoxInfo();
 			if(backBoxInfo != null && backBoxInfo.getLocalePhoto() != null) {
-				String name = backBoxInfo.getLocalePhoto().getLocalePhotoId()+".jpg";
+				String name = "box_"+backBoxInfo.getLocalePhoto().getLocalePhotoId()+".jpg";
 				byte[] data = backBoxInfo.getLocalePhoto().getLocalePhoto();
 				saveImageToFile(name, data);
 				backBoxInfo.getLocalePhoto().setLocalePhoto(null);
@@ -28,7 +28,7 @@ public class CableInfoServiceImpl extends BaseService implements CableInfoServic
 			}
 			BoxInfo froBoxInfo = temp.getFroBoxInfo();
 			if(froBoxInfo != null && froBoxInfo.getLocalePhoto() != null) {
-				String name = froBoxInfo.getLocalePhoto().getLocalePhotoId()+".jpg";
+				String name = "box_"+froBoxInfo.getLocalePhoto().getLocalePhotoId()+".jpg";
 				byte[] data = froBoxInfo.getLocalePhoto().getLocalePhoto();
 				saveImageToFile(name, data);
 				froBoxInfo.getLocalePhoto().setLocalePhoto(null);

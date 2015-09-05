@@ -1,0 +1,113 @@
+/* CSS Document */
+/*body{
+	background:black;
+	text-align:center;
+	}*/
+#container{
+	/*background-color:blue;*/
+	height:785px;
+	width:1280px;
+	/*position:absolute;
+	left:50%;
+	top:50%;*/
+	margin-left:auto;
+	margin-right:auto;
+	}
+
+#Header{
+	width:1280px;
+	height:65px;
+	background-image:url(../images/Image9atframe17.png);
+}
+
+#PageBody{
+	/*background-color:red;*/
+	width:1280px;
+	height:720px;
+	background-image:url(../images/Image2atframe0.png);
+	}
+
+#SideBar{
+	/*background-color:green;*/
+	width:200px;
+	height:720px;
+	float:left;
+	}
+
+#SearchBar{
+	/*background-color:red;*/
+	width:200px;
+	height:50px;
+	float:left;
+	}
+	
+#List{
+	/*background-color:gray;*/
+	width:200px;
+	height:640px;
+	float:left;
+	border:1px solid #000; 
+	border-bottom:none;
+	border-left:none;
+	border-top: none;;
+	}
+
+#MainBody{
+	/*background-color:yellow;*/
+	width:1060px;
+	height:720px;
+	float:right;
+	margin-left:20px;
+	}
+
+#Footer{background-color:white;}
+
+a{ text-decoration: none;}
+
+#searchText{
+		float:left;
+		width:150px;
+		height:50px;
+		
+	}
+
+#searchText input{
+		width:120px;
+		height:30px;
+		border:none;
+		background-image:url(../images/Image21atframe17.png) no-repeat;
+		font-size:18px;
+		margin-left:20px;
+		margin-top:15px;
+	}
+
+#searchBtn{
+		float:left;
+		width:50px;
+		height:50px;
+	}
+
+#searchBtn img{
+		height:32px;
+		width:40px;
+		margin-top:15px;
+		margin-left:-8px;
+	}
+
+.liTitle{
+	list-style-type:none;
+	list-style-image:url(../images/Image7atframe17.png);
+	/*display:inline-block;*/
+	/*height:40px;*/
+	width:200px;
+	font-size:24px;
+	margin-top:10px;
+	}
+	
+.liItem{
+	font-size:18px;
+	width:200px;
+	list-style-type:none;
+	list-style-image:url(../images/Image8atframe17.png);
+	margin-left:-20px;
+	}

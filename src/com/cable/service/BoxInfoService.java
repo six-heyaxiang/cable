@@ -7,6 +7,6 @@ import com.cable.common.DynamicPagination;
 
 public interface BoxInfoService {
 	BoxInfo selectBoxInfoById(Integer id);
-	List<BoxInfo> selectBoxInfoLIst(DynamicPagination pagination);
+	List<BoxInfo> selectBoxInfoLIst(DynamicPagination pagination, Integer stationId);
 	Long selectBoxInfoCount();
 }
