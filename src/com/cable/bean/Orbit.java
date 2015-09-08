@@ -1,6 +1,7 @@
 package com.cable.bean;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Orbit implements Serializable {
 
@@ -10,6 +11,7 @@ public class Orbit implements Serializable {
 	private Integer	orbitTypeId;
 	private String	orbitName;
 	private String	localePhotoId;
+	private List<String> photos;
 	public Integer getOrbitId() {
 		return orbitId;
 	}
@@ -39,6 +41,12 @@ public class Orbit implements Serializable {
 	}
 	public void setLocalePhotoId(String localePhotoId) {
 		this.localePhotoId = localePhotoId;
+	}
+	public List<String> getPhotos() {
+		return photos;
+	}
+	public void setPhotos(List<String> photos) {
+		this.photos = photos;
 	}
 	
 }

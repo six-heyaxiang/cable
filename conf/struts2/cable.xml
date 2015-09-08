@@ -69,5 +69,16 @@
 			</result> -->
 			<result name="stationList">/pages/main.jsp</result>
 		</action>
+		<action name="orbitlist" class="com.cable.web.StationInfoAction" method="getOrbits">
+			<result name="orbitlist" type="json">
+				<param name="root">orbitInfoListBean</param>
+		        <param name="contentType">text/html</param>
+				<param name="ignoreHierarchy">false</param>
+				<param name="excludeNullProperties">true</param>
+				<param name="includeProperties">
+					orbits\[\d+\]\.\w+*
+				</param>
+			</result>
+		</action>
 	</package>
 </struts>

@@ -2,7 +2,9 @@ package com.cable.web;
 
 import java.util.List;
 
+import com.cable.bean.Orbit;
 import com.cable.bean.StationInfo;
+import com.cable.bean.result.ResultOrbitInfo;
 import com.cable.bean.result.ResultStationInfo;
 import com.cable.common.DynamicPagination;
 import com.cable.service.StationInfoService;
@@ -13,11 +15,12 @@ public class StationInfoAction extends BaseAction {
 	
 	private StationInfoService stationInfoService;
 	//请求参数
-	private Integer statinoId;
+	private Integer stationId;
 	private DynamicPagination pagination;
 	
 	//返回结果
 	private ResultStationInfo stationInfoListBean;
+	private ResultOrbitInfo orbitInfoListBean;
 	public String getStationInfoList() {
 		long totalCount = stationInfoService.getAllStationInfoCount();
 		pagination = new DynamicPagination(1, 20, totalCount);
@@ -27,6 +30,12 @@ public class StationInfoAction extends BaseAction {
 		return "stationList";
 	}
 	
+	public String getOrbits() {
+		List<Orbit> orbits = stationInfoService.getAllOrbitsByStationId(stationId);
+		orbitInfoListBean = new ResultOrbitInfo();
+		orbitInfoListBean.setOrbits(orbits);
+		return "orbitlist";
+	}
 	
 	public StationInfoService getStationInfoService() {
 		return stationInfoService;
@@ -34,17 +43,23 @@ public class StationInfoAction extends BaseAction {
 	public void setStationInfoService(StationInfoService stationInfoService) {
 		this.stationInfoService = stationInfoService;
 	}
-	public Integer getStatinoId() {
-		return statinoId;
+	public Integer getStationId() {
+		return stationId;
 	}
-	public void setStatinoId(Integer statinoId) {
-		this.statinoId = statinoId;
+	public void setStationId(Integer stationId) {
+		this.stationId = stationId;
 	}
 	public ResultStationInfo getStationInfoListBean() {
 		return stationInfoListBean;
 	}
 	public void setStationInfoListBean(ResultStationInfo stationInfoListBean) {
 		this.stationInfoListBean = stationInfoListBean;
+	}
+	public ResultOrbitInfo getOrbitInfoListBean() {
+		return orbitInfoListBean;
+	}
+	public void setOrbitInfoListBean(ResultOrbitInfo orbitInfoListBean) {
+		this.orbitInfoListBean = orbitInfoListBean;
 	}
 	
 }

@@ -20,4 +20,32 @@
 				B_StationInfo
 		]]>
 	</select>
+	<select id="selectOrbitsByStationId" resultType="com.cable.bean.Orbit">
+		<![CDATA[
+			SELECT
+				OrbitID,
+				StationID,
+				OrbitTypeID,
+				OrbitName,
+				LocalePhotoID
+			FROM
+				B_Orbit
+			WHERE
+				StationID = #{id}	
+			AND 
+				OrbitTypeID = 1	
+		]]>
+	</select>
+	<select id="selectLocalePhotoById" resultType="com.cable.bean.LocalePhoto">
+		<![CDATA[
+			SELECT
+				LocalePhotoID,
+				LocalePhotoName,
+				LocalePhoto
+			FROM
+				B_LocalePhoto
+			WHERE
+				LocalePhotoID = #{id}
+		]]>
+	</select>
 </mapper>

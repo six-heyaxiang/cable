@@ -39,25 +39,6 @@ public class CableInfoServiceImpl extends BaseService implements CableInfoServic
 		return temp;
 	}
 
-	private String getFilePath(String name) {
-		String filePath = this.getClass().getResource("/").getPath().replace("WEB-INF/classes", "images");
-		filePath = filePath+name;
-		return filePath;
-	}
-
-	private void saveImageToFile(String name, byte[] data) {
-		FileOutputStream out;
-		try {
-			String filePath = getFilePath(name);
-			out = new FileOutputStream(filePath);
-			out.write(data);
-			out.flush();
-			out.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
 	@Override
 	public List<CableInfo> getCableInfoList(DynamicPagination dynamicPagination) {
 		List<CableInfo> datas = cableInfoDao.selectCableInfoList();
