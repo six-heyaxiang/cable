@@ -111,3 +111,6 @@ a{ text-decoration: none;}
 	list-style-image:url(../images/Image8atframe17.png);
 	margin-left:-20px;
 	}
+.types {
+	display: none;
+}

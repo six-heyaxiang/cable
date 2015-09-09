@@ -12,7 +12,7 @@
 	$(function() {
 		
 	});
-	function stationClick(id) {
+	function orbitClick(id) {
 		$.ajax({
 			url:'<%=contextPath%>/infos/orbitlist.jhtml',// 跳转到 action    
 		    data:{  
@@ -22,12 +22,15 @@
 		    cache:false,    
 		    dataType:'json',    
 		    success:function(data) {    
-		    	alert(data["orbits"][0]["orbitName"]);
+		    	alert(data["orbits"][0]);
 		    },    
 		     error : function() {    
 		          alert("异常！");    
 		     } 
 		});	
+	}
+	function showList(id) {
+		$("#station"+id).toggle();
 	}
 </script>
 </head>
@@ -50,7 +53,14 @@
                 <div id = "List">
             		<ul>
             			<s:iterator value="stationInfoListBean.stationInfos" var="station">
-            				<li class = "liTitle" onclick="stationClick(<s:property value="#station.stationId"/>)"><a href="javascript:void(0)"><s:property value="#station.stationName"/></a></li>	
+            				<li class = "liTitle" onclick="showList(<s:property value="#station.stationId"/>)"><a href="javascript:void(0)"><s:property value="#station.stationName"/></a></li>	
+     						<div class="types" id="station<s:property value="#station.stationId"/>">
+     							<ul>
+     								<li class="liTitle" onclick="orbitClick(<s:property value="#station.stationId"/>)"><a href="javascript:void(0)">道岔</a></li>
+								    <li class="liTitle" onclick="orbitClick(<s:property value="#station.stationId"/>)"><a href="javascript:void(0)">轨道</a></li>
+     								<li class="liTitle" onclick="orbitClick(<s:property value="#station.stationId"/>)"><a href="javascript:void(0)">信号灯</a></li>
+     							</ul>
+     						</div>
             			</s:iterator>
                     </ul>
                 </div>
